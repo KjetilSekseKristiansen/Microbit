@@ -1,0 +1,15 @@
+#include <stdint.h>
+#include "gpio.h"
+
+
+#define UART ((NRF_UART_REG*)0x40002000)
+typedef struct {
+volatile uint32_t STARTRX ,STOPRX, STARTTX, STOPTX, SUSPEND,
+CTS, NCTS, RXDRDY, TXDRDY, ERROR, RXTO, INTEN, INTENSET,
+INTENCLR, ERRORSRC, ENABLE, PSELRTS, PSELTXD, PSELCTS,
+PSELRXD, RXD, TXD, BAUDRATE, CONFIG;
+} NRF_UART_REG;
+
+void uart_init(){
+	UART->BAUDRATE = 9600;
+}
