@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include<stdio.h>
 #define GPIO ((NRF_GPIO_REGS*)0x50000000)
 
 typedef struct {
@@ -33,7 +34,7 @@ int main(){
 		if(!(GPIO->IN & (1<<26))){
 			GPIO->OUTSET=(111<<13);
 		}
-		
+
 		/* Check if button A is pressed;
 		 * turn off LED matrix if it is. */
 		if(!(GPIO->IN & (1<<17))){

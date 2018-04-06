@@ -18,3 +18,5 @@ typedef struct {
 } NRF_GPIO_REG;
 
 #endif
+
+void gpio_set_ground_output();
